@@ -1,0 +1,105 @@
+<!-- ============================================================
+     DRAWABLE RESOURCES — place each block in res/drawable/
+     ============================================================ -->
+
+
+<!-- ── tab_selected_bg.xml ── -->
+<!--
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <solid android:color="#1A1A2E"/>
+    <corners android:radius="20dp"/>
+</shape>
+-->
+
+<!-- ── tab_unselected_bg.xml ── -->
+<!--
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <solid android:color="#F5F5F5"/>
+    <corners android:radius="20dp"/>
+    <stroke android:width="1dp" android:color="#E0E0E0"/>
+</shape>
+-->
+
+<!-- ── input_bg.xml ── -->
+<!--
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <solid android:color="#F5F5F5"/>
+    <corners android:radius="8dp"/>
+    <stroke android:width="1dp" android:color="#E0E0E0"/>
+</shape>
+-->
+
+<!-- ── spinner_bg.xml ── -->
+<!--
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <solid android:color="#FFFFFF"/>
+    <corners android:radius="8dp"/>
+    <stroke android:width="1dp" android:color="#BDBDBD"/>
+</shape>
+-->
+
+<!-- ── filter_tab_bg.xml ── -->
+<!--
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <solid android:color="#F5F5F5"/>
+    <corners android:radius="20dp"/>
+</shape>
+-->
+
+<!-- ── category_badge_bg.xml ── -->
+<!-- Change color per category in code (Premium=#212121, High Quality=#455A64, Standard=#546E7A, Basic=#607D8B, Minimum=#9E9E9E) -->
+<!--
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <solid android:color="#212121"/>
+    <corners android:radius="4dp"/>
+</shape>
+-->
+
+<!-- ── status_badge_bg.xml ── -->
+<!--
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <solid android:color="#F5F5F5"/>
+    <corners android:radius="4dp"/>
+    <stroke android:width="1dp" android:color="#BDBDBD"/>
+</shape>
+-->
+
+<!-- ── gradient_green_card.xml ── (used in Customer Account Summary card background) -->
+<!--
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <gradient
+        android:startColor="#E8F5E9"
+        android:endColor="#F3E5F5"
+        android:angle="135"/>
+    <corners android:radius="14dp"/>
+</shape>
+-->
+
+<!-- ── tab_bottom_indicator.xml ── (active tab underline for Customer App tabs) -->
+<!--
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:gravity="bottom">
+        <shape android:shape="rectangle">
+            <solid android:color="#388E3C"/>
+            <size android:height="3dp"/>
+        </shape>
+    </item>
+</layer-list>
+-->

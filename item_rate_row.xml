@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- item_rate_row.xml — used in Settings Rate Chart table -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp">
+
+    <!-- Category Badge -->
+    <TextView android:id="@+id/tvCategory"
+        android:text="Premium"
+        android:textSize="11sp"
+        android:textColor="#FFFFFF"
+        android:background="@drawable/category_badge_bg"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        android:paddingTop="3dp"
+        android:paddingBottom="3dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="2"/>
+
+    <TextView android:id="@+id/tvFatRange"
+        android:text="4.5% - 10%"
+        android:textSize="12sp"
+        android:textColor="#424242"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="2.5"/>
+
+    <TextView android:id="@+id/tvSnfRange"
+        android:text="8.8% - 15%"
+        android:textSize="12sp"
+        android:textColor="#424242"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="2.5"/>
+
+    <TextView android:id="@+id/tvRate"
+        android:text="₹48"
+        android:textSize="13sp"
+        android:textStyle="bold"
+        android:textColor="#388E3C"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1.5"
+        android:gravity="end"/>
+
+    <!-- Action Buttons -->
+    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+        android:layout_weight="1.5" android:orientation="horizontal" android:gravity="end">
+
+        <ImageButton android:id="@+id/btnEdit"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_edit"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:layout_marginEnd="4dp"/>
+
+        <ImageButton android:id="@+id/btnDelete"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_delete"
+            android:background="?attr/selectableItemBackgroundBorderless"/>
+    </LinearLayout>
+</LinearLayout>

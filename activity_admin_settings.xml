@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F0F4F8">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFFFFF"
+        app:elevation="2dp">
+
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="8dp"
+            android:paddingBottom="4dp">
+            <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView android:text="Dairy Management System" android:textSize="18sp"
+                    android:textStyle="bold" android:textColor="#1565C0"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                <TextView android:text="Admin Dashboard" android:textSize="12sp"
+                    android:textColor="#757575" android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+        </androidx.appcompat.widget.Toolbar>
+
+        <HorizontalScrollView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:scrollbars="none" android:paddingStart="8dp" android:paddingEnd="8dp"
+            android:paddingBottom="8dp">
+            <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView android:text="Overview" android:layout_width="wrap_content"
+                    android:layout_height="36dp" android:gravity="center" android:paddingStart="16dp"
+                    android:paddingEnd="16dp" android:textSize="13sp" android:textColor="#424242"
+                    android:background="@drawable/tab_unselected_bg" android:layout_marginEnd="6dp"/>
+                <TextView android:text="Collection" android:layout_width="wrap_content"
+                    android:layout_height="36dp" android:gravity="center" android:paddingStart="16dp"
+                    android:paddingEnd="16dp" android:textSize="13sp" android:textColor="#424242"
+                    android:background="@drawable/tab_unselected_bg" android:layout_marginEnd="6dp"/>
+                <TextView android:text="Feed" android:layout_width="wrap_content"
+                    android:layout_height="36dp" android:gravity="center" android:paddingStart="16dp"
+                    android:paddingEnd="16dp" android:textSize="13sp" android:textColor="#424242"
+                    android:background="@drawable/tab_unselected_bg" android:layout_marginEnd="6dp"/>
+                <TextView android:text="Customers" android:layout_width="wrap_content"
+                    android:layout_height="36dp" android:gravity="center" android:paddingStart="16dp"
+                    android:paddingEnd="16dp" android:textSize="13sp" android:textColor="#424242"
+                    android:background="@drawable/tab_unselected_bg" android:layout_marginEnd="6dp"/>
+                <TextView android:text="Reports" android:layout_width="wrap_content"
+                    android:layout_height="36dp" android:gravity="center" android:paddingStart="16dp"
+                    android:paddingEnd="16dp" android:textSize="13sp" android:textColor="#424242"
+                    android:background="@drawable/tab_unselected_bg" android:layout_marginEnd="6dp"/>
+                <TextView android:text="Settings" android:layout_width="wrap_content"
+                    android:layout_height="36dp" android:gravity="center" android:paddingStart="16dp"
+                    android:paddingEnd="16dp" android:textSize="13sp" android:textColor="#FFFFFF"
+                    android:background="@drawable/tab_selected_bg"/>
+            </LinearLayout>
+        </HorizontalScrollView>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:padding="12dp"
+        android:clipToPadding="false">
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- System Settings Header -->
+            <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:gravity="center_vertical"
+                android:layout_marginBottom="12dp">
+                <ImageView android:layout_width="20dp" android:layout_height="20dp"
+                    android:src="@drawable/ic_settings" app:tint="#1565C0"
+                    android:layout_marginEnd="8dp"/>
+                <TextView android:text="System Settings" android:textSize="16sp"
+                    android:textStyle="bold" android:textColor="#1565C0"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+            <!-- Settings Sub-Tabs -->
+            <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:layout_marginBottom="14dp">
+                <Button android:id="@+id/btnRateChart" android:layout_width="wrap_content"
+                    android:layout_height="36dp" android:text="📊 Rate Chart" android:textSize="13sp"
+                    android:textColor="#FFFFFF" android:backgroundTint="#212121"
+                    android:layout_marginEnd="8dp" style="@style/Widget.MaterialComponents.Button"/>
+                <Button android:id="@+id/btnNotifications" android:layout_width="wrap_content"
+                    android:layout_height="36dp" android:text="🔔 Notifications" android:textSize="13sp"
+                    android:textColor="#424242" android:backgroundTint="#FFFFFF"
+                    android:layout_marginEnd="8dp"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
+                <Button android:id="@+id/btnSystem" android:layout_width="wrap_content"
+                    android:layout_height="36dp" android:text="⚙ System" android:textSize="13sp"
+                    android:textColor="#424242" android:backgroundTint="#FFFFFF"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
+            </LinearLayout>
+
+            <!-- Rate Chart Management Card -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="2dp"
+                android:layout_marginBottom="14dp">
+
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="vertical" android:padding="16dp">
+
+                    <!-- Header Row -->
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:orientation="horizontal" android:gravity="center_vertical"
+                        android:layout_marginBottom="12dp">
+
+                        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                            android:layout_weight="1" android:orientation="vertical">
+                            <TextView android:text="Rate Chart Management" android:textSize="15sp"
+                                android:textStyle="bold" android:textColor="#212121"
+                                android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                            <TextView android:text="Manage quality-based pricing structure"
+                                android:textSize="12sp" android:textColor="#9E9E9E"
+                                android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                        </LinearLayout>
+
+                        <Button android:id="@+id/btnAddRate" android:layout_width="wrap_content"
+                            android:layout_height="36dp" android:text="+ Add Rate" android:textSize="13sp"
+                            android:textColor="#FFFFFF" android:backgroundTint="#1565C0"
+                            style="@style/Widget.MaterialComponents.Button"/>
+                    </LinearLayout>
+
+                    <!-- Table Header -->
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:orientation="horizontal" android:paddingBottom="8dp">
+                        <TextView android:text="Category" android:layout_width="0dp"
+                            android:layout_height="wrap_content" android:layout_weight="2"
+                            android:textSize="12sp" android:textStyle="bold" android:textColor="#424242"/>
+                        <TextView android:text="Fat Range (%)" android:layout_width="0dp"
+                            android:layout_height="wrap_content" android:layout_weight="2.5"
+                            android:textSize="12sp" android:textStyle="bold" android:textColor="#424242"/>
+                        <TextView android:text="SNF Range (%)" android:layout_width="0dp"
+                            android:layout_height="wrap_content" android:layout_weight="2.5"
+                            android:textSize="12sp" android:textStyle="bold" android:textColor="#424242"/>
+                        <TextView android:text="Rate (₹/L)" android:layout_width="0dp"
+                            android:layout_height="wrap_content" android:layout_weight="1.5"
+                            android:textSize="12sp" android:textStyle="bold" android:textColor="#424242"
+                            android:gravity="end"/>
+                        <TextView android:text="Actions" android:layout_width="0dp"
+                            android:layout_height="wrap_content" android:layout_weight="1.5"
+                            android:textSize="12sp" android:textStyle="bold" android:textColor="#424242"
+                            android:gravity="end"/>
+                    </LinearLayout>
+
+                    <View android:layout_width="match_parent" android:layout_height="1dp"
+                        android:background="#E0E0E0" android:layout_marginBottom="6dp"/>
+
+                    <!-- Rate Rows RecyclerView -->
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvRateChart"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:nestedScrollingEnabled="false"/>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Quality Standards Card -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="2dp"
+                android:layout_marginBottom="10dp">
+
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="vertical" android:padding="16dp">
+
+                    <TextView android:text="Quality Standards" android:textSize="15sp"
+                        android:textStyle="bold" android:textColor="#212121"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+
+                    <TextView android:text="Minimum quality requirements for milk acceptance"
+                        android:textSize="12sp" android:textColor="#9E9E9E"
+                        android:layout_marginBottom="16dp"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+
+                    <!-- Minimum Fat Content -->
+                    <TextView android:text="Minimum Fat Content (%)" android:textSize="13sp"
+                        android:textColor="#424242" android:layout_marginBottom="4dp"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etMinFatContent"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:text="3.5"
+                        android:inputType="numberDecimal"
+                        android:background="@drawable/input_bg"
+                        android:paddingStart="14dp"
+                        android:layout_marginBottom="14dp"/>
+
+                    <!-- Minimum SNF Content -->
+                    <TextView android:text="Minimum SNF Content (%)" android:textSize="13sp"
+                        android:textColor="#424242" android:layout_marginBottom="4dp"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etMinSnfContent"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:text="7.5"
+                        android:inputType="numberDecimal"
+                        android:background="@drawable/input_bg"
+                        android:paddingStart="14dp"
+                        android:layout_marginBottom="16dp"/>
+
+                    <!-- Update Standards Button -->
+                    <Button
+                        android:id="@+id/btnUpdateStandards"
+                        android:layout_width="wrap_content"
+                        android:layout_height="44dp"
+                        android:text="🖫 Update Standards"
+                        android:textSize="14sp"
+                        android:textColor="#FFFFFF"
+                        android:backgroundTint="#388E3C"
+                        style="@style/Widget.MaterialComponents.Button"/>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

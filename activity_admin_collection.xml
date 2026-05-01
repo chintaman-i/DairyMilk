@@ -1,0 +1,636 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F0F4F8">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFFFFF"
+        app:elevation="2dp">
+
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="8dp"
+            android:paddingBottom="4dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:text="Dairy Management System"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="#1565C0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:text="Admin Dashboard"
+                    android:textSize="12sp"
+                    android:textColor="#757575"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+        </androidx.appcompat.widget.Toolbar>
+
+        <!-- Top Tab Navigation -->
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="none"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:paddingBottom="8dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView android:text="Overview"
+                    android:layout_width="wrap_content" android:layout_height="36dp"
+                    android:gravity="center" android:paddingStart="16dp" android:paddingEnd="16dp"
+                    android:textSize="13sp" android:textColor="#424242"
+                    android:background="@drawable/tab_unselected_bg" android:layout_marginEnd="6dp"/>
+
+                <TextView android:text="Collection"
+                    android:layout_width="wrap_content" android:layout_height="36dp"
+                    android:gravity="center" android:paddingStart="16dp" android:paddingEnd="16dp"
+                    android:textSize="13sp" android:textColor="#FFFFFF"
+                    android:background="@drawable/tab_selected_bg" android:layout_marginEnd="6dp"/>
+
+                <TextView android:text="Feed"
+                    android:layout_width="wrap_content" android:layout_height="36dp"
+                    android:gravity="center" android:paddingStart="16dp" android:paddingEnd="16dp"
+                    android:textSize="13sp" android:textColor="#424242"
+                    android:background="@drawable/tab_unselected_bg" android:layout_marginEnd="6dp"/>
+
+                <TextView android:text="Customers"
+                    android:layout_width="wrap_content" android:layout_height="36dp"
+                    android:gravity="center" android:paddingStart="16dp" android:paddingEnd="16dp"
+                    android:textSize="13sp" android:textColor="#424242"
+                    android:background="@drawable/tab_unselected_bg" android:layout_marginEnd="6dp"/>
+
+                <TextView android:text="Reports"
+                    android:layout_width="wrap_content" android:layout_height="36dp"
+                    android:gravity="center" android:paddingStart="16dp" android:paddingEnd="16dp"
+                    android:textSize="13sp" android:textColor="#424242"
+                    android:background="@drawable/tab_unselected_bg" android:layout_marginEnd="6dp"/>
+
+                <TextView android:text="Settings"
+                    android:layout_width="wrap_content" android:layout_height="36dp"
+                    android:gravity="center" android:paddingStart="16dp" android:paddingEnd="16dp"
+                    android:textSize="13sp" android:textColor="#424242"
+                    android:background="@drawable/tab_unselected_bg"/>
+            </LinearLayout>
+        </HorizontalScrollView>
+
+        <!-- Morning / Evening Sub-tabs -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingStart="12dp"
+            android:paddingBottom="10dp">
+
+            <Button
+                android:id="@+id/btnMorningCollection"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:text="☀ Morning Collection"
+                android:textSize="13sp"
+                android:textColor="#FFFFFF"
+                android:backgroundTint="#212121"
+                android:layout_marginEnd="8dp"
+                style="@style/Widget.MaterialComponents.Button"/>
+
+            <Button
+                android:id="@+id/btnEveningCollection"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:text=" Evening Collection"
+                android:textSize="13sp"
+                android:textColor="#424242"
+                android:backgroundTint="#FFFFFF"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
+        </LinearLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:padding="12dp"
+        android:clipToPadding="false">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Stat Cards Row 1 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="10dp">
+
+                <!-- Total Customers -->
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="2dp"
+                    android:layout_marginEnd="6dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:padding="16dp">
+
+                        <ImageView
+                            android:layout_width="28dp"
+                            android:layout_height="28dp"
+                            android:src="@drawable/ic_group"
+                            app:tint="#1565C0"
+                            android:layout_marginBottom="4dp"/>
+
+                        <TextView
+                            android:text="Total Customers"
+                            android:textSize="11sp"
+                            android:textColor="#757575"
+                            android:gravity="center"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:id="@+id/tvTotalCustomers"
+                            android:text="8"
+                            android:textSize="20sp"
+                            android:textStyle="bold"
+                            android:textColor="#1565C0"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- Delivered -->
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="2dp"
+                    android:layout_marginStart="6dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:padding="16dp">
+
+                        <ImageView
+                            android:layout_width="28dp"
+                            android:layout_height="28dp"
+                            android:src="@drawable/ic_check_circle"
+                            app:tint="#388E3C"
+                            android:layout_marginBottom="4dp"/>
+
+                        <TextView
+                            android:text="Delivered"
+                            android:textSize="11sp"
+                            android:textColor="#757575"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:id="@+id/tvDelivered"
+                            android:text="4"
+                            android:textSize="20sp"
+                            android:textStyle="bold"
+                            android:textColor="#388E3C"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+
+            <!-- Stat Cards Row 2 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="14dp">
+
+                <!-- Pending -->
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="2dp"
+                    android:layout_marginEnd="6dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:padding="16dp">
+
+                        <ImageView
+                            android:layout_width="28dp"
+                            android:layout_height="28dp"
+                            android:src="@drawable/ic_cancel"
+                            app:tint="#E53935"
+                            android:layout_marginBottom="4dp"/>
+
+                        <TextView
+                            android:text="Pending"
+                            android:textSize="11sp"
+                            android:textColor="#757575"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:id="@+id/tvPending"
+                            android:text="4"
+                            android:textSize="20sp"
+                            android:textStyle="bold"
+                            android:textColor="#E53935"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- Morning Total -->
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="2dp"
+                    android:layout_marginStart="6dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:padding="16dp">
+
+                        <ImageView
+                            android:layout_width="28dp"
+                            android:layout_height="28dp"
+                            android:src="@drawable/ic_calculate"
+                            app:tint="#7B1FA2"
+                            android:layout_marginBottom="4dp"/>
+
+                        <TextView
+                            android:text="Morning Total"
+                            android:textSize="11sp"
+                            android:textColor="#757575"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:id="@+id/tvMorningTotal"
+                            android:text="96L"
+                            android:textSize="20sp"
+                            android:textStyle="bold"
+                            android:textColor="#7B1FA2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+
+            <!-- Morning Collection Entry Card -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="2dp"
+                android:layout_marginBottom="10dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginBottom="4dp">
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@drawable/ic_person"
+                            app:tint="#1565C0"
+                            android:layout_marginEnd="6dp"/>
+
+                        <TextView
+                            android:text="Morning Collection Entry"
+                            android:textSize="15sp"
+                            android:textStyle="bold"
+                            android:textColor="#212121"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+                    </LinearLayout>
+
+                    <TextView
+                        android:text="Enter milk collection details"
+                        android:textSize="12sp"
+                        android:textColor="#9E9E9E"
+                        android:layout_marginBottom="14dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <!-- Customer Number Spinner -->
+                    <TextView
+                        android:text="Customer Number"
+                        android:textSize="13sp"
+                        android:textColor="#424242"
+                        android:layout_marginBottom="4dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <Spinner
+                        android:id="@+id/spinnerCustomer"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:background="@drawable/input_bg"
+                        android:paddingStart="12dp"
+                        android:layout_marginBottom="12dp"/>
+
+                    <!-- Liters and Fat Content Row -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="12dp">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:layout_marginEnd="8dp">
+
+                            <TextView
+                                android:text="Liters"
+                                android:textSize="13sp"
+                                android:textColor="#424242"
+                                android:layout_marginBottom="4dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"/>
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/etLiters"
+                                android:layout_width="match_parent"
+                                android:layout_height="48dp"
+                                android:hint="0.0"
+                                android:inputType="numberDecimal"
+                                android:background="@drawable/input_bg"
+                                android:paddingStart="12dp"/>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:text="Fat Content (%)"
+                                android:textSize="13sp"
+                                android:textColor="#424242"
+                                android:layout_marginBottom="4dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"/>
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/etFatContent"
+                                android:layout_width="match_parent"
+                                android:layout_height="48dp"
+                                android:hint="0.0"
+                                android:inputType="numberDecimal"
+                                android:background="@drawable/input_bg"
+                                android:paddingStart="12dp"/>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <!-- SNF Content -->
+                    <TextView
+                        android:text="SNF Content (%)"
+                        android:textSize="13sp"
+                        android:textColor="#424242"
+                        android:layout_marginBottom="4dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etSnfContent"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:hint="0.0"
+                        android:inputType="numberDecimal"
+                        android:background="@drawable/input_bg"
+                        android:paddingStart="12dp"
+                        android:layout_marginBottom="16dp"/>
+
+                    <!-- Record Button -->
+                    <Button
+                        android:id="@+id/btnRecordCollection"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:text="Record Collection"
+                        android:textSize="15sp"
+                        android:textColor="#FFFFFF"
+                        android:backgroundTint="#66BB6A"
+                        style="@style/Widget.MaterialComponents.Button"/>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Customer Status Card -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="2dp"
+                android:layout_marginBottom="10dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:text="Customer Status"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:textColor="#212121"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:text="Track delivery status for morning"
+                        android:textSize="12sp"
+                        android:textColor="#9E9E9E"
+                        android:layout_marginBottom="12dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <!-- Search Bar -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etSearchCustomers"
+                            android:layout_width="match_parent"
+                            android:layout_height="48dp"
+                            android:hint="Search customers..."
+                            android:drawableStart="@drawable/ic_search"
+                            android:drawablePadding="8dp"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!-- Filter Tabs: All / Delivered / Pending -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:orientation="horizontal"
+                        android:background="@drawable/filter_tab_bg"
+                        android:layout_marginBottom="10dp">
+
+                        <TextView
+                            android:id="@+id/filterAll"
+                            android:text="All (8)"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:textSize="13sp"
+                            android:textColor="#424242"/>
+
+                        <TextView
+                            android:id="@+id/filterDelivered"
+                            android:text="Delivered (4)"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:textSize="13sp"
+                            android:textColor="#424242"/>
+
+                        <TextView
+                            android:id="@+id/filterPending"
+                            android:text="Pending (4)"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:textSize="13sp"
+                            android:textColor="#424242"/>
+                    </LinearLayout>
+
+                    <!-- Customer List - RecyclerView -->
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvCustomerStatus"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:nestedScrollingEnabled="false"/>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Morning Collections Table Card -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="2dp"
+                android:layout_marginBottom="10dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:text="Morning Collections"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:textColor="#212121"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:text="Recorded collections for this session"
+                        android:textSize="12sp"
+                        android:textColor="#9E9E9E"
+                        android:layout_marginBottom="12dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <!-- Table Header -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingBottom="6dp">
+
+                        <TextView android:text="Customer" android:layout_width="0dp"
+                            android:layout_height="wrap_content" android:layout_weight="2"
+                            android:textSize="12sp" android:textStyle="bold" android:textColor="#424242"/>
+                        <TextView android:text="Liters" android:layout_width="0dp"
+                            android:layout_height="wrap_content" android:layout_weight="1"
+                            android:textSize="12sp" android:textStyle="bold" android:textColor="#424242" android:gravity="end"/>
+                        <TextView android:text="Fat%" android:layout_width="0dp"
+                            android:layout_height="wrap_content" android:layout_weight="1"
+                            android:textSize="12sp" android:textStyle="bold" android:textColor="#424242" android:gravity="end"/>
+                        <TextView android:text="SNF%" android:layout_width="0dp"
+                            android:layout_height="wrap_content" android:layout_weight="1"
+                            android:textSize="12sp" android:textStyle="bold" android:textColor="#424242" android:gravity="end"/>
+                        <TextView android:text="Amount" android:layout_width="0dp"
+                            android:layout_height="wrap_content" android:layout_weight="1.5"
+                            android:textSize="12sp" android:textStyle="bold" android:textColor="#424242" android:gravity="end"/>
+                    </LinearLayout>
+
+                    <View android:layout_width="match_parent" android:layout_height="1dp"
+                        android:background="#E0E0E0" android:layout_marginBottom="6dp"/>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvCollections"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:nestedScrollingEnabled="false"/>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

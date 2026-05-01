@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F0F4F8">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFFFFF"
+        app:elevation="2dp">
+
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="8dp"
+            android:paddingBottom="4dp">
+            <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView android:text="Dairy Management System" android:textSize="18sp"
+                    android:textStyle="bold" android:textColor="#1565C0"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                <TextView android:text="Admin Dashboard" android:textSize="12sp"
+                    android:textColor="#757575" android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+        </androidx.appcompat.widget.Toolbar>
+
+        <HorizontalScrollView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:scrollbars="none" android:paddingStart="8dp" android:paddingEnd="8dp"
+            android:paddingBottom="8dp">
+            <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView android:text="Overview" android:layout_width="wrap_content"
+                    android:layout_height="36dp" android:gravity="center" android:paddingStart="16dp"
+                    android:paddingEnd="16dp" android:textSize="13sp" android:textColor="#424242"
+                    android:background="@drawable/tab_unselected_bg" android:layout_marginEnd="6dp"/>
+                <TextView android:text="Collection" android:layout_width="wrap_content"
+                    android:layout_height="36dp" android:gravity="center" android:paddingStart="16dp"
+                    android:paddingEnd="16dp" android:textSize="13sp" android:textColor="#424242"
+                    android:background="@drawable/tab_unselected_bg" android:layout_marginEnd="6dp"/>
+                <TextView android:text="Feed" android:layout_width="wrap_content"
+                    android:layout_height="36dp" android:gravity="center" android:paddingStart="16dp"
+                    android:paddingEnd="16dp" android:textSize="13sp" android:textColor="#FFFFFF"
+                    android:background="@drawable/tab_selected_bg" android:layout_marginEnd="6dp"/>
+                <TextView android:text="Customers" android:layout_width="wrap_content"
+                    android:layout_height="36dp" android:gravity="center" android:paddingStart="16dp"
+                    android:paddingEnd="16dp" android:textSize="13sp" android:textColor="#424242"
+                    android:background="@drawable/tab_unselected_bg" android:layout_marginEnd="6dp"/>
+                <TextView android:text="Reports" android:layout_width="wrap_content"
+                    android:layout_height="36dp" android:gravity="center" android:paddingStart="16dp"
+                    android:paddingEnd="16dp" android:textSize="13sp" android:textColor="#424242"
+                    android:background="@drawable/tab_unselected_bg" android:layout_marginEnd="6dp"/>
+                <TextView android:text="Settings" android:layout_width="wrap_content"
+                    android:layout_height="36dp" android:gravity="center" android:paddingStart="16dp"
+                    android:paddingEnd="16dp" android:textSize="13sp" android:textColor="#424242"
+                    android:background="@drawable/tab_unselected_bg"/>
+            </LinearLayout>
+        </HorizontalScrollView>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:padding="12dp"
+        android:clipToPadding="false">
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Stat Cards Row 1 -->
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:layout_marginBottom="10dp">
+
+                <androidx.cardview.widget.CardView android:layout_width="0dp"
+                    android:layout_height="wrap_content" android:layout_weight="1"
+                    app:cardCornerRadius="12dp" app:cardElevation="2dp" android:layout_marginEnd="6dp">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:orientation="vertical" android:gravity="center" android:padding="14dp">
+                        <ImageView android:layout_width="26dp" android:layout_height="26dp"
+                            android:src="@drawable/ic_inventory_2" app:tint="#1565C0"
+                            android:layout_marginBottom="4dp"/>
+                        <TextView android:text="Total Items" android:textSize="10sp"
+                            android:textColor="#757575" android:gravity="center"
+                            android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                        <TextView android:id="@+id/tvTotalItems" android:text="4"
+                            android:textSize="20sp" android:textStyle="bold" android:textColor="#1565C0"
+                            android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView android:layout_width="0dp"
+                    android:layout_height="wrap_content" android:layout_weight="1"
+                    app:cardCornerRadius="12dp" app:cardElevation="2dp" android:layout_marginStart="6dp">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:orientation="vertical" android:gravity="center" android:padding="14dp">
+                        <ImageView android:layout_width="26dp" android:layout_height="26dp"
+                            android:src="@drawable/ic_warning" app:tint="#E65100"
+                            android:layout_marginBottom="4dp"/>
+                        <TextView android:text="Low Stock" android:textSize="10sp"
+                            android:textColor="#757575" android:gravity="center"
+                            android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                        <TextView android:id="@+id/tvLowStock" android:text="1"
+                            android:textSize="20sp" android:textStyle="bold" android:textColor="#E65100"
+                            android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:layout_marginBottom="14dp">
+
+                <androidx.cardview.widget.CardView android:layout_width="0dp"
+                    android:layout_height="wrap_content" android:layout_weight="1"
+                    app:cardCornerRadius="12dp" app:cardElevation="2dp" android:layout_marginEnd="6dp">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:orientation="vertical" android:gravity="center" android:padding="14dp">
+                        <ImageView android:layout_width="26dp" android:layout_height="26dp"
+                            android:src="@drawable/ic_shopping_cart" app:tint="#388E3C"
+                            android:layout_marginBottom="4dp"/>
+                        <TextView android:text="Today's Sales" android:textSize="10sp"
+                            android:textColor="#757575" android:gravity="center"
+                            android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                        <TextView android:id="@+id/tvTodaySales" android:text="₹4,800"
+                            android:textSize="18sp" android:textStyle="bold" android:textColor="#388E3C"
+                            android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView android:layout_width="0dp"
+                    android:layout_height="wrap_content" android:layout_weight="1"
+                    app:cardCornerRadius="12dp" app:cardElevation="2dp" android:layout_marginStart="6dp">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:orientation="vertical" android:gravity="center" android:padding="14dp">
+                        <ImageView android:layout_width="26dp" android:layout_height="26dp"
+                            android:src="@drawable/ic_inventory_2" app:tint="#7B1FA2"
+                            android:layout_marginBottom="4dp"/>
+                        <TextView android:text="Inventory Value" android:textSize="10sp"
+                            android:textColor="#757575" android:gravity="center"
+                            android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                        <TextView android:id="@+id/tvInventoryValue" android:text="₹119k"
+                            android:textSize="18sp" android:textStyle="bold" android:textColor="#7B1FA2"
+                            android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+
+            <!-- Inventory / Sales / Purchase Tabs -->
+            <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:layout_marginBottom="10dp">
+                <Button android:id="@+id/btnInventory" android:layout_width="wrap_content"
+                    android:layout_height="36dp" android:text="Inventory" android:textSize="13sp"
+                    android:textColor="#FFFFFF" android:backgroundTint="#212121"
+                    android:layout_marginEnd="8dp" style="@style/Widget.MaterialComponents.Button"/>
+                <Button android:id="@+id/btnSales" android:layout_width="wrap_content"
+                    android:layout_height="36dp" android:text="Sales" android:textSize="13sp"
+                    android:textColor="#424242" android:backgroundTint="#FFFFFF"
+                    android:layout_marginEnd="8dp"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
+                <Button android:id="@+id/btnPurchase" android:layout_width="wrap_content"
+                    android:layout_height="36dp" android:text="Purchase" android:textSize="13sp"
+                    android:textColor="#424242" android:backgroundTint="#FFFFFF"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
+            </LinearLayout>
+
+            <!-- Low Stock Alert Banner -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="0dp"
+                android:layout_marginBottom="10dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:padding="12dp"
+                    android:background="#FFF3E0">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/ic_warning"
+                        app:tint="#E65100"
+                        android:layout_marginEnd="8dp"/>
+
+                    <TextView
+                        android:text="Low Stock Alert"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:textColor="#E65100"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"/>
+
+                    <TextView
+                        android:id="@+id/tvLowStockItem"
+                        android:text="Mineral Supplement"
+                        android:textSize="13sp"
+                        android:textColor="#424242"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:id="@+id/tvStockRemaining"
+                        android:text="150 kg remaining"
+                        android:textSize="13sp"
+                        android:textColor="#E65100"
+                        android:textStyle="bold"
+                        android:layout_marginStart="8dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Search and Add Stock Row -->
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:gravity="center_vertical"
+                android:layout_marginBottom="10dp">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_weight="1" android:layout_marginEnd="8dp"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etSearchFeed" android:layout_width="match_parent"
+                        android:layout_height="48dp" android:hint="Search feed items..."
+                        android:drawableStart="@drawable/ic_search" android:drawablePadding="8dp"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <Button android:id="@+id/btnAddStock" android:layout_width="wrap_content"
+                    android:layout_height="48dp" android:text="+ Add Stock" android:textSize="13sp"
+                    android:textColor="#FFFFFF" android:backgroundTint="#1565C0"
+                    style="@style/Widget.MaterialComponents.Button"/>
+            </LinearLayout>
+
+            <!-- Feed Inventory Table Card -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="2dp"
+                android:layout_marginBottom="10dp">
+
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="vertical" android:padding="16dp">
+
+                    <TextView android:text="Feed Inventory" android:textSize="15sp"
+                        android:textStyle="bold" android:textColor="#212121"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+
+                    <TextView android:text="Current stock levels and pricing" android:textSize="12sp"
+                        android:textColor="#9E9E9E" android:layout_marginBottom="12dp"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+
+                    <!-- Table Header -->
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:orientation="horizontal" android:paddingBottom="8dp">
+                        <TextView android:text="Feed Name" android:layout_width="0dp"
+                            android:layout_height="wrap_content" android:layout_weight="2.5"
+                            android:textSize="12sp" android:textStyle="bold" android:textColor="#424242"/>
+                        <TextView android:text="Category" android:layout_width="0dp"
+                            android:layout_height="wrap_content" android:layout_weight="2"
+                            android:textSize="12sp" android:textStyle="bold" android:textColor="#424242"/>
+                        <TextView android:text="Stock" android:layout_width="0dp"
+                            android:layout_height="wrap_content" android:layout_weight="2"
+                            android:textSize="12sp" android:textStyle="bold" android:textColor="#424242"
+                            android:gravity="end"/>
+                        <TextView android:text="Cost" android:layout_width="0dp"
+                            android:layout_height="wrap_content" android:layout_weight="1.5"
+                            android:textSize="12sp" android:textStyle="bold" android:textColor="#424242"
+                            android:gravity="end"/>
+                        <TextView android:text="Sell" android:layout_width="0dp"
+                            android:layout_height="wrap_content" android:layout_weight="1.5"
+                            android:textSize="12sp" android:textStyle="bold" android:textColor="#424242"
+                            android:gravity="end"/>
+                    </LinearLayout>
+
+                    <View android:layout_width="match_parent" android:layout_height="1dp"
+                        android:background="#E0E0E0" android:layout_marginBottom="6dp"/>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvFeedInventory"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:nestedScrollingEnabled="false"/>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
